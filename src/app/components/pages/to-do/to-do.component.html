@@ -1,0 +1,18 @@
+<div class="main-container">
+    <div class="heading">
+        Add New Task
+    </div>
+    <div class="input-field">
+        <input type="text" placeholder="Enter Task" required #task>
+        <button type="submit" (click)="addTask(task.value)" class="btn-submit">></button>
+    </div>
+    <div class="heading-2">
+        TO-DO List
+    </div>
+    <div class="display-list">
+        <tr *ngFor="let task of tasks">
+            <input type="checkbox" class="checkbox-round">
+            {{task.task}}
+        </tr>
+    </div>
+</div>
