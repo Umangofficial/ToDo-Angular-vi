@@ -31,3 +31,33 @@ body {
   font-size: 22px;
   text-align: left;
 }
+.display-list {
+  text-align: left;
+  font-size: 18px;
+}
+.checkbox-round {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: rgb(255, 22, 22);
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid rgb(0, 0, 0);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.checkbox-round:checked {
+  background-color: rgb(68, 224, 54);
+}
+
+tr {
+  margin: 0 10px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 5px;
+  margin-bottom: 5px;
+}

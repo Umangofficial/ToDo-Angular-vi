@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  taskGetUrl: 'http://localhost:8000/tasks',
+  taskPostUrl: 'http://localhost:8000/add',
+  taskUpdateUrl: 'http://localhost:8000/update'
 };
 
 /*

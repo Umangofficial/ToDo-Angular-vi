@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { taskTodo } from 'src/assets/taskModel';
-import taskData from './../../../../assets/task.json'
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-to-do',
@@ -9,19 +8,30 @@ import taskData from './../../../../assets/task.json'
 })
 export class ToDoComponent implements OnInit {
 
+  public tasks: any = []
+  constructor(private TaskList: TaskService) { }
 
-  tasks: taskTodo[] = taskData
-
-  addTask(item: string) {
-    console.log(item)
-    taskData.push({ task: item })
+  addTask(data: any) {
+    console.log(data)
+    this.TaskList.postTask(data).subscribe(response => {
+      console.log(response)
+    })
   }
 
-
-  constructor() { }
+  update(data: any) {
+    const { id, status } = data
+    console.log(id, status)
+    this.TaskList.updateTask(data).subscribe(response => {
+      console.log(response)
+    })
+  }
 
   ngOnInit(): void {
-    console.log(taskData)
+    this.TaskList.getTask().subscribe(response => {
+      this.tasks = response
+      console.log(this.tasks)
+    });
+
   }
 
 }

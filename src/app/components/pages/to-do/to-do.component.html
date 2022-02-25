@@ -2,17 +2,28 @@
     <div class="heading">
         Add New Task
     </div>
-    <div class="input-field">
-        <input type="text" placeholder="Enter Task" required #task>
-        <button type="submit" (click)="addTask(task.value)" class="btn-submit">></button>
-    </div>
+    <form class="input-field" #task="ngForm" (ngSubmit)="addTask({task:task.value.task,status:false})">
+        <input type="text" placeholder="Enter Task" name="task" required ngModel>
+        <button type="submit" class="btn-submit">></button>
+    </form>
     <div class="heading-2">
         TO-DO List
     </div>
     <div class="display-list">
         <tr *ngFor="let task of tasks">
-            <input type="checkbox" class="checkbox-round" ng-change="update()" ng-model="checkSelect">
-            {{task.task}}
+            <a *ngIf="task.status; else elseblock">
+                <input type="checkbox" checked class="checkbox-round" (click)="update({id:task._id,status:task.status})"
+                    ng-model="checkSelect">
+                {{task.task}}
+            </a>
+            <ng-template #elseblock>
+                <a>
+                    <input type="checkbox" class="checkbox-round" (click)="update({id:task._id,status:task.status})"
+                        ng-model="checkSelect">
+                    {{task.task}}
+                </a>
+            </ng-template>
+            <button class="btn-delete">x</button>
         </tr>
     </div>
 </div>

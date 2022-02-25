@@ -2,4 +2,12 @@
     <div class="heading-2">
         Task Done List
     </div>
+    <div class="display-list">
+        <ng-container *ngFor="let task of tasks">
+            <tr *ngIf="task.status">
+                <input type="checkbox" class="checkbox-round" ng-change="update()" ng-model="checkSelect" checked>
+                {{task.task}}
+            </tr>
+        </ng-container>
+    </div>
 </div>
