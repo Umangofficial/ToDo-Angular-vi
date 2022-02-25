@@ -11,7 +11,7 @@
     </div>
     <div class="display-list">
         <tr *ngFor="let task of tasks">
-            <input type="checkbox" class="checkbox-round">
+            <input type="checkbox" class="checkbox-round" ng-change="update()" ng-model="checkSelect">
             {{task.task}}
         </tr>
     </div>

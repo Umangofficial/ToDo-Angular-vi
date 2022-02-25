@@ -17,6 +17,7 @@ export class ToDoComponent implements OnInit {
     taskData.push({ task: item })
   }
 
+
   constructor() { }
 
   ngOnInit(): void {

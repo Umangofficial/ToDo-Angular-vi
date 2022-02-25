@@ -1,3 +1,3 @@
 export interface taskTodo {
-    task: string
+    task: string,
 }
