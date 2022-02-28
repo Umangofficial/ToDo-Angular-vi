@@ -8,30 +8,36 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class ToDoComponent implements OnInit {
 
-  public tasks: any = []
-  constructor(private TaskList: TaskService) { }
+  //public tasks: any = []
+  constructor(public TaskList: TaskService) { }
 
-  addTask(data: any) {
-    console.log(data)
-    this.TaskList.postTask(data).subscribe(response => {
-      console.log(response)
-    })
-  }
+  // addTask(data: any) {
+  //   console.log(data)
+  //   this.TaskList.postTask(data).subscribe(response => {
+  //     this.TaskList.getTask().subscribe(response => {
+  //       this.tasks = response
+  //       console.log(this.tasks)
+  //     })
+  //   })
+  //   this.TaskList.addTaskData(data)
+  // }
 
-  update(data: any) {
-    const { id, status } = data
-    console.log(id, status)
-    this.TaskList.updateTask(data).subscribe(response => {
-      console.log(response)
-    })
-  }
+  // update(data: any) {
+  //   const { id, status } = data
+  //   this.TaskList.updateTask(data).subscribe(response => {
+  //     console.log(response)
+  //   })
+  // }
+
+  // deleteTask(data: any) {
+  //   const { id } = data
+  //   this.TaskList.deleteTask(data).subscribe(response => {
+  //     console.log(response)
+  //   })
+  // }
 
   ngOnInit(): void {
-    this.TaskList.getTask().subscribe(response => {
-      this.tasks = response
-      console.log(this.tasks)
-    });
-
+    this.TaskList.getTaskData()
   }
 
 }

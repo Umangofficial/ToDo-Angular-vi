@@ -28,6 +28,7 @@ body {
   padding: 10px;
   padding-left: 15px;
   margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 22px;
   text-align: left;
 }
@@ -53,11 +54,28 @@ body {
   background-color: rgb(68, 224, 54);
 }
 
+.display-list {
+  padding: 2px;
+  text-align: left;
+  font-size: 18px;
+}
+.btn-delete {
+  font-size: larger;
+  color: red;
+  background-color: white;
+}
 tr {
   margin: 0 10px;
   align-items: center;
   justify-content: space-between;
   display: flex;
   padding: 5px;
+  padding-bottom: 8px;
   margin-bottom: 5px;
+  border-bottom: 2px solid rgb(212, 212, 212);
+  border-radius: 10px;
+}
+tr:hover,
+tr:hover > .btn-delete {
+  background-color: rgb(228, 228, 228);
 }

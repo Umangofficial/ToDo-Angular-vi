@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   taskGetUrl: 'http://localhost:8000/tasks',
   taskPostUrl: 'http://localhost:8000/add',
-  taskUpdateUrl: 'http://localhost:8000/update'
+  taskUpdateUrl: 'http://localhost:8000/update',
+  taskDeleteUrl: 'http://localhost:8000/delete'
 };
 
 /*
