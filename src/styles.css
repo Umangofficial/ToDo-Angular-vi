@@ -73,6 +73,7 @@ tr {
   padding-bottom: 8px;
   margin-bottom: 5px;
   border-bottom: 2px solid rgb(212, 212, 212);
+  border-right: 2px solid rgb(212, 212, 212);
   border-radius: 10px;
 }
 tr:hover,
