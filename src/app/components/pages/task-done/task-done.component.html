@@ -3,10 +3,16 @@
         Task Done List
     </div>
     <div class="display-list">
-        <ng-container *ngFor="let task of tasks">
+        <ng-container *ngFor="let task of TaskList.tasks.reverse()">
             <tr *ngIf="task.status">
-                <input type="checkbox" class="checkbox-round" ng-change="update()" ng-model="checkSelect" checked>
-                {{task.task}}
+                <a>
+                    <input type="checkbox" class="checkbox-round"
+                        (click)="TaskList.updateTaskData({id:task._id,status:task.status})" ng-model="checkSelect"
+                        checked>
+                    {{task.task}}
+                </a>
+                <button class="btn-delete" (click)="TaskList.deleteTaskData({id:task._id})"
+                    ng-model="deleteBtn">x</button>
             </tr>
         </ng-container>
     </div>

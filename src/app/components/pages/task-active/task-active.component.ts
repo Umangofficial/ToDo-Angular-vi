@@ -8,16 +8,27 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class TaskActiveComponent implements OnInit {
 
-  public tasks: any = []
-
   constructor(public TaskList: TaskService) { }
 
-  ngOnInit(): void {
-    this.TaskList.getTask().subscribe(response => {
-      this.tasks = response
-      console.log(this.tasks)
-    });
+  // update(data: any) {
+  //   const { id, status } = data
+  //   console.log(id, status)
+  //   this.TaskList.updateTask(data).subscribe(response => {
+  //     console.log(response)
+  //   })
+  // }
 
+  // deleteTask(data: any) {
+  //   const { id } = data
+  //   console.log(id)
+  //   this.TaskList.deleteTask(data).subscribe(response => {
+  //     console.log(response)
+  //   })
+
+  // }
+
+  ngOnInit(): void {
+    this.TaskList.getTaskData()
   }
 }
 

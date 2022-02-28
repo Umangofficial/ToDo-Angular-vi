@@ -2,7 +2,7 @@
     <div class="heading">
         Add New Task
     </div>
-    <form class="input-field" #task="ngForm" (ngSubmit)="addTask({task:task.value.task,status:false})">
+    <form class="input-field" #task="ngForm" (ngSubmit)="TaskList.addTaskData({task:task.value.task,status:false})">
         <input type="text" placeholder="Enter Task" name="task" required ngModel>
         <button type="submit" class="btn-submit">></button>
     </form>
@@ -10,20 +10,20 @@
         TO-DO List
     </div>
     <div class="display-list">
-        <tr *ngFor="let task of tasks">
+        <tr *ngFor="let task of TaskList.tasks.reverse()">
             <a *ngIf="task.status; else elseblock">
-                <input type="checkbox" checked class="checkbox-round" (click)="update({id:task._id,status:task.status})"
-                    ng-model="checkSelect">
+                <input type="checkbox" checked class="checkbox-round"
+                    (click)="TaskList.updateTaskData({id:task._id,status:task.status})" ng-model="checkSelect">
                 {{task.task}}
             </a>
             <ng-template #elseblock>
                 <a>
-                    <input type="checkbox" class="checkbox-round" (click)="update({id:task._id,status:task.status})"
-                        ng-model="checkSelect">
+                    <input type="checkbox" class="checkbox-round"
+                        (click)="TaskList.updateTaskData({id:task._id,status:task.status})" ng-model="checkSelect">
                     {{task.task}}
                 </a>
             </ng-template>
-            <button class="btn-delete">x</button>
+            <button class="btn-delete" (click)="TaskList.deleteTaskData({id:task._id})" ng-model="deleteBtn">x</button>
         </tr>
     </div>
 </div>

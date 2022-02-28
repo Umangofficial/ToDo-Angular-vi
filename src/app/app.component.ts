@@ -9,15 +9,15 @@ import { TaskService } from './services/task.service';
 export class AppComponent {
   title = 'to-do';
 
-  public tasks: any = []
+  // public tasks: any = []
 
   constructor(public TaskList: TaskService) { }
 
   ngOnInit(): void {
-    this.TaskList.getTask().subscribe(response => {
-      this.tasks = response
-      console.log(this.tasks)
-    });
+    // this.TaskList.getTask().subscribe(response => {
+    //   this.tasks = response
+    //   console.log(this.tasks)
+    // });
 
   }
 
